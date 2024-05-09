@@ -25,9 +25,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <main className="flex min-h-screen flex-col justify-between">
+          <main className="flex min-h-screen flex-col">
             <TopBar />
-            {children}
+            <div className="flex min-h-screen">{children}</div>
           </main>
         </ThemeProvider>
       </body>
