@@ -27,7 +27,7 @@ export default function RootLayout({
           <CssBaseline />
           <main className="flex min-h-screen flex-col">
             <TopBar />
-            <div className="flex min-h-screen">{children}</div>
+            {children}
           </main>
         </ThemeProvider>
       </body>

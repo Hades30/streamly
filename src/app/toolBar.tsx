@@ -1,4 +1,6 @@
 import { AppBar, Toolbar, Typography, TextField } from "@mui/material";
+import Image from "next/image";
+
 import SearchIcon from "@mui/icons-material/Search";
 import Autocomplete from "@mui/material/Autocomplete";
 import { debounce } from "throttle-debounce";
@@ -30,7 +32,11 @@ const TopBar = () => {
           justifyContent: "space-between",
         }}
       >
-        <Typography variant="h6">Streamly</Typography>
+        <Typography variant="h6">
+          <a href="/">
+            <Image src="/stream.png" width={44} height={40} alt="" />
+          </a>
+        </Typography>
 
         <Autocomplete
           freeSolo
