@@ -6,6 +6,7 @@ import { Container, Typography } from "@mui/material";
 
 import { useSearchParams } from "next/navigation";
 import { findMovieById } from "@/lib/action";
+import Loading from "./loading";
 
 export default function Page({ params }: { params: { slug: String } }) {
   const searchParams = useSearchParams();
@@ -22,9 +23,7 @@ export default function Page({ params }: { params: { slug: String } }) {
   }, [params.slug, searchParams, findMovieById]);
   console.log(item);
 
-  if (!item.id) {
-    return "Loading";
-  }
+  if (!item.id) return <Loading />;
 
   return (
     <Container className="flex items-center justify-center flex-col">
