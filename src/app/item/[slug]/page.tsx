@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Movie from "./movie";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 import { useSearchParams } from "next/navigation";
 import { findMovieById } from "@/lib/action";
@@ -20,15 +20,32 @@ export default function Page({ params }: { params: { slug: String } }) {
       });
     }
   }, [params.slug, searchParams, findMovieById]);
+  console.log(item);
 
   if (!item.id) {
-    return "loading";
+    return "Loading";
   }
 
   return (
-    <Container className="flex items-center justify-center">
-      <div style={{ width: "80%", height: "60%" }} className="flex">
+    <Container className="flex items-center justify-center flex-col">
+      <div
+        style={{ width: "80%", height: "100%" }}
+        className="flex flex-col justify-center"
+      >
         <Movie movie={item} />
+        <div style={{ marginTop: "16px" }}>
+          <div className="flex flex-start align-center">
+            <Typography variant="h3">{item.title}&nbsp;</Typography>
+            <Typography variant="h5" className="flex items-center">
+              ({item.release_date && item.release_date.split("-")[0]})
+            </Typography>
+          </div>
+          {item.tagline && (
+            <div className="italic py-2 color-[#a1a1aa]">"{item.tagline}"</div>
+          )}
+          {item.overview}
+          <div className="pt-4">Rating - {item.vote_average}</div>
+        </div>
       </div>
     </Container>
   );

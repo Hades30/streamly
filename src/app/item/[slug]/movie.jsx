@@ -10,7 +10,7 @@ export default function Movie({ movie }) {
       allowFullScreen="true"
       webkitallowfullscreen="true"
       mozallowfullscreen="true"
-      style={{ width: "100%" }}
+      style={{ width: "100%", height: "60%" }}
     />
   );
 }
