@@ -48,13 +48,30 @@ const TopBar = () => {
             b.title ? (
               <div {...a} style={{ display: "flex" }} key={b.id}>
                 {
-                  <img
-                    src={`${TMDB_CONFIG.images.secure_base_url}/w45${b.backdrop_path}`}
+                  <Image
+                    src={
+                      b.backdrop_path
+                        ? `${TMDB_CONFIG.images.secure_base_url}/w45${b.backdrop_path}`
+                        : "/default.png"
+                    }
                     alt=""
-                    loading="lazy"
+                    width={32}
+                    height={28}
+                    placeholder="empty"
                   />
                 }
-                <div style={{ paddingLeft: "20px" }}> {b.title}</div>
+                <div style={{ paddingLeft: "20px" }} className="font-medium">
+                  {" "}
+                  {b.title}&nbsp;
+                  {b.release_date && (
+                    <span
+                      className="color-[#a1a1aa] text-sm"
+                      style={{ color: "#a1a1aa" }}
+                    >
+                      {b.release_date.split("-")[0]}
+                    </span>
+                  )}
+                </div>
               </div>
             ) : null
           }
@@ -70,10 +87,15 @@ const TopBar = () => {
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Search input"
+              placeholder="Search a flix"
+              hiddenLabel
+              size="small"
               InputProps={{
                 ...params.InputProps,
                 type: "search",
+              }}
+              sx={{
+                fieldset: { borderColor: "white" },
               }}
             />
           )}
