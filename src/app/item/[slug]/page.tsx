@@ -8,9 +8,18 @@ import { useSearchParams } from "next/navigation";
 import { findMovieById } from "@/lib/action";
 import Loading from "./loading";
 
+type Item = {
+  id?: number;
+  tagline?: String;
+  release_date?: String;
+  vote_average?: number;
+  title?: String;
+  overview?: String,
+};
+
 export default function Page({ params }: { params: { slug: String } }) {
   const searchParams = useSearchParams();
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState<Item>({});
 
   useEffect(() => {
     if (params.slug) {

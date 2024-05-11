@@ -43,8 +43,8 @@ const TopBar = () => {
           id="movie"
           disableClearable
           filterOptions={(x) => x}
-          getOptionLabel={(option) => ""}
-          renderOption={(a, b) =>
+          getOptionLabel={(option: any) => ""}
+          renderOption={(a: any, b: any) =>
             b.title ? (
               <div {...a} style={{ display: "flex" }} key={b.id}>
                 {
@@ -78,13 +78,13 @@ const TopBar = () => {
           sx={{ ml: 4, width: 300 }}
           popupIcon={<SearchIcon />}
           onInputChange={search}
-          onChange={(_res, value) => {
+          onChange={(_res: any, value: any) => {
             console.log(value);
             router.push(`/item/${value.id}?media=${value.media_type}`);
           }}
           noOptionsText="No Content found"
           options={options}
-          renderInput={(params) => (
+          renderInput={(params: any) => (
             <TextField
               {...params}
               placeholder="Search a flix"
