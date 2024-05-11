@@ -14,7 +14,7 @@ type Item = {
   release_date?: String;
   vote_average?: number;
   title?: String;
-  overview?: String,
+  overview?: String;
 };
 
 export default function Page({ params }: { params: { slug: String } }) {
