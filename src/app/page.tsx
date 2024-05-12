@@ -5,7 +5,7 @@ export default function Home() {
     <main className="flex min-h-screen justify-around align-center m-auto	">
       <div className="flex flex-col m-auto">
         <Image
-          src="/stream.png"
+          src="/streamly/stream.png"
           width={100}
           height={100}
           className="m-auto"
