@@ -33,7 +33,7 @@ const TopBar = () => {
         }}
       >
         <Typography variant="h6">
-          <a href="/">
+          <a href="/streamly">
             <Image src="/streamly/stream.png" width={44} height={40} alt="" />
           </a>
         </Typography>
