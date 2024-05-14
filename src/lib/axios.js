@@ -7,6 +7,7 @@ const axiosInstance = axios.create({
   timeout: 5000, // Set a timeout (optional)
   headers: {
     "Content-Type": "application/json", // Set default headers
+    "Cache-Control": "no-store",
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YjU5NjRkZTZhMGE4NDVjYTRkMDNhOTM2NzE2ZjRiZSIsInN1YiI6IjY2MzNjMWM3OTlkNWMzMDEyMzU2ZDI3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aTgBazyBeZ-eKHBsYdsHlFZtpvmlluQxs9TCKeqx3ck", // Example: Set authorization header
   },
